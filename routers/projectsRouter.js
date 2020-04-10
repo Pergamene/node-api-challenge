@@ -10,18 +10,22 @@ router.use('/:id', validateProjectId);
 router.get('/', async (req, res) => {
   try {
     const projects = await db.get();
-    res.status(200).json(projects);
+    if (projects.length) {
+      res.status(200).json(projects);
+    } else {
+      res.status(404).json({ message: 'There are no projects.' });
+    }
   } catch {
     res.status(500).json({ error: 'There was a problem getting the projects.' });
   }
 });
 
 router.get('/:id', async (req, res) => {
-  try {
-    res.status(200).json(req.project);
-  } catch {
-    res.status(500).json({ error: 'There was a problem getting the project.' });
-  }
+  // try {
+  res.status(200).json(req.project);
+  // } catch {
+  //   res.status(500).json({ error: 'There was a problem getting the project.' });
+  // }
 });
 
 router.post('/', validateProject, async (req, res) => {
@@ -44,9 +48,8 @@ router.post('/:id/actions', validateAction, async (req, res) => {
 
 router.put('/:id', validateProject, async (req, res) => {
   try {
-    const id = req.params.id;
-    const project = await db.update(id, req.body);
-    res.status(200).json(project);
+    const project = await db.update(req.params.id, req.body);
+    res.status(201).json(project);
   } catch {
     res.status(500).json({ error: 'There was a problem updating the project.' });
   }
