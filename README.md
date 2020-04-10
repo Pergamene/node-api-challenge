@@ -40,13 +40,33 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+```
+router and middleware.
+```
+
 - [ ] Describe Middleware?
+
+```
+Middleware is something that happens between things.  For express middleware happens between the request coming into the server and the method that handles the request.
+```
 
 - [ ] Describe a Resource?
 
+```
+A resource is a datapoint in the database that the server can access for use in requests.
+```
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+```
+The API can return a server status code, as well as a resource.
+```
+
 - [ ] How can we partition our application into sub-applications?
+
+```
+A large express server application can be broken into sub-applications by using express routers.
+```
 
 ## Minimum Viable Product
 
