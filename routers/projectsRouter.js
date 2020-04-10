@@ -28,6 +28,15 @@ router.get('/:id', async (req, res) => {
   // }
 });
 
+router.get('/:id/actions', async (req, res) => {
+  try {
+    const actions = await db.getProjectActions(req.params.id);
+    res.status(200).json(actions);
+  } catch {
+    res.status(500).json({ error: 'There was a problem getting the projects actions.' });
+  }
+});
+
 router.post('/', validateProject, async (req, res) => {
   try {
     const project = await db.insert(req.body);
