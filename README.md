@@ -40,13 +40,33 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+```
+router and middleware.
+```
+
 - [ ] Describe Middleware?
+
+```
+Middleware is something that happens between things.  For express middleware happens between the request coming into the server and the method that handles the request.
+```
 
 - [ ] Describe a Resource?
 
+```
+A resource is a datapoint in the database that the server can access for use in requests.
+```
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+```
+The API can return a server status code, as well as a resource.
+```
+
 - [ ] How can we partition our application into sub-applications?
+
+```
+A large express server application can be broken into sub-applications by using express routers.
+```
 
 ## Minimum Viable Product
 
@@ -99,6 +119,8 @@ The `projectModel.js` helper includes an extra method called `getProjectActions(
 We have provided test data for all the resources.
 
 ## Stretch Goal
+
+[Frontend](https://github.com/Pergamene/node-api-challenge-frontend)
 
 - Use `create-react-app` to create an application in a separate folder (outside the API project folder). Name it anything you want.
 - From the React application show a list of all _projects_ using the API you built.
